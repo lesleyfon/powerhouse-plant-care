@@ -6,7 +6,7 @@ module.exports = {
 			green: {
 				primary: "#25523B",
 				secondary: "#7c9789",
-				hover: "#92a89d",
+				hover: "#a7b9b0",
 			},
 			white: {
 				lightGreen: "#e9edeb",
@@ -17,10 +17,19 @@ module.exports = {
 			"th-secondary": "var(--secondary)",
 			"th-light": "var(--lightGreen)",
 			"th-green": "var(--deepGreen)",
+			"th-login-hover": "var(--hover)",
+		},
+
+		maxHeight: {
+			0: "0",
+			"1/4": "25%",
+			"1/2": "50%",
+			"3/4": "75%",
+			full: "100%",
 		},
 	},
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/forms")],
 };

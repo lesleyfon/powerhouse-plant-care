@@ -102,26 +102,26 @@ class Header extends React.Component {
 										<a
 											href="/"
 											className="
-                                            inline-flex
-                                            items-center
-                                            justify-center
-                                            space-x-2 
-                                            px-3
-                                            py-2
-                                            rounded-md 
-                                            text-sm 
-                                            font-medium 
-                                            hover:bg-th-light 
-                                            hover:text-th-green
-                                            rounded-md
-                                            text-th-primary
-                                            text-base 
-                                            hover:text-white 
-                                            hover:bg-gray-700 
-                                            focus:outline-none
-                                            focus:ring-2 
-                                            focus:ring-inset 
-                                            focus:ring-white"
+												inline-flex
+												items-center
+												justify-center
+												space-x-2 
+												px-3
+												py-2
+												rounded-md 
+												text-sm 
+												font-medium 
+												hover:bg-th-light 
+												hover:text-th-green
+												rounded-md
+												text-th-primary
+												text-base 
+												hover:text-white 
+												hover:bg-gray-700 
+												focus:outline-none
+												focus:ring-2 
+												focus:ring-inset 
+												focus:ring-white"
 										>
 											<span>Add Plant </span>
 

@@ -7,8 +7,8 @@
 	--primary: theme("colors.green.primary");
 	--secondary: theme("colors.green.secondary");
 	--lightGreen: theme("colors.white.lightGreen");
-	--lightGreen: theme("colors.white.lightGreen");
 	--deepGreen: theme("colors.white.deepGreen");
+	--hover: theme("colors.green.hover");
 }
 .th-green {
 	--primary: theme("colors.green.primary");
