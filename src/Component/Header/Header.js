@@ -74,7 +74,7 @@ class Header extends React.Component {
 								</div>
 								<div className="hidden sm:block sm:ml-6">
 									<div className="flex space-x-4">
-										{/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
+										{/* <!-- Current: "bg-gray-900 text-white", Defau plt: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
 										<a
 											href="/"
 											className=" text-th-primary text-base px-3 py-2 rounded-md text-sm font-medium hover:bg-th-light hover:text-th-green"
