@@ -2,3 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--primary: theme("colors.green.primary");
+	--secondary: theme("colors.green.secondary");
+	--lightGreen: theme("colors.white.lightGreen");
+	--lightGreen: theme("colors.white.lightGreen");
+	--deepGreen: theme("colors.white.deepGreen");
+}
+.th-green {
+	--primary: theme("colors.green.primary");
+	--secondary: theme("colors.green.secondary");
+	color: theme("colors.green.primary");
+}
+
+.th-white {
+	--primary: theme("colors.white.lightGreen");
+	--secondary: theme("colors.white.deepGreen");
+}
