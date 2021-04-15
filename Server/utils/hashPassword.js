@@ -1,5 +1,4 @@
 const bcrypt = require("bcryptjs");
-const BCRYPT_HASHING_STRING = process.env.BCRYPT_HASHING_STRING;
 const BCRYPT_HASHING_SALT_ROUNDS = process.env.BCRYPT_HASHING_SALT_ROUNDS;
 
 /**

@@ -4,7 +4,6 @@ const router = express.Router();
 
 router.post("/api/login", (request, response) => {
 	const { username, password } = request.body;
-	console.log(username, password);
 	if (!username || !password) {
 		let error = { message: "Please Provide Username and Password", status: 401 };
 
