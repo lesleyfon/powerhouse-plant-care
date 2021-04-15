@@ -1,5 +1,5 @@
 // Function tp hash password
-const { hashPassword } = require("../utils/hashPassword.js");
+const { hashPassword, compareHashedPassword } = require("../utils/hashPassword.js");
 const { UserSchema, mongoose } = require("./Schema.js");
 
 UserSchema.statics.authenticate = (username, password, cb) => {
@@ -9,20 +9,23 @@ UserSchema.statics.authenticate = (username, password, cb) => {
 		} else if (user === null) {
 			// Hashed password
 			let hash = hashPassword(password);
-
-			User.insertMany(
+			console.log("user", hash);
+			return User.insertMany(
 				{
 					username,
 					password: hash,
 				},
 				(error, doc) => {
-					if (error) return cb(error);
 					console.log(doc);
+					if (error) return cb(error);
 					return cb(doc);
 				}
 			);
 		}
 
+		if (!compareHashedPassword(password, user.password)) {
+			return cb({ message: "Invalid password" });
+		}
 		return cb(user);
 	});
 };

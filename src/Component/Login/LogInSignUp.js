@@ -42,8 +42,9 @@ export class LogInSignUp extends Component {
 			})
 			.then((response) => {
 				console.log(response);
+
 				localStorage.setItem("token", "username");
-				this.props.history.push("/");
+				// this.props.history.push("/");
 			})
 			.catch((error) => {
 				console.log(error);
