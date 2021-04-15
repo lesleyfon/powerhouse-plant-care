@@ -22,9 +22,7 @@ const mongoose = require("mongoose");
 
 // Connecting to the Database
 mongoose.connect("mongodb://localhost/test", { useNewUrlParser: true, useUnifiedTopology: true });
-
 const db = mongoose.connection;
-
 db.on("error", console.error.bind(console, "connection error:"));
 
 // parse application/x-www-form-urlencoded

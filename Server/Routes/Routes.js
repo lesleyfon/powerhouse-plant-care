@@ -10,6 +10,7 @@ router.post("/api/login", (request, response) => {
 
 		return response.status(401).send(error);
 	}
+
 	User.authenticate(username, password, (user) => {
 		if (user.message === "User not found") {
 			let error = { message: "Wrong email or password", status: 401 };
