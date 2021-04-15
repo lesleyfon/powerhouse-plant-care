@@ -7,25 +7,28 @@ UserSchema.statics.authenticate = (username, password, cb) => {
 		if (err) {
 			return cb(err);
 		} else if (user === null) {
+			// Logic for creating a new user when the username doesn't exist in the database
+
 			// Hashed password
 			let hash = hashPassword(password);
-			console.log("user", hash);
-			return User.insertMany(
+
+			//Added new entry to the database
+			return User.create(
 				{
 					username,
 					password: hash,
 				},
 				(error, doc) => {
-					console.log(doc);
 					if (error) return cb(error);
 					return cb(doc);
 				}
 			);
 		}
-
+		// Compares password if a user with the username exist in the database
 		if (!compareHashedPassword(password, user.password)) {
 			return cb({ message: "Invalid password" });
 		}
+		// Returns user when username and password match
 		return cb(user);
 	});
 };
