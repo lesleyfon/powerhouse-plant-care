@@ -10,6 +10,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.3",
     "react": "^17.0.2",
@@ -50,5 +51,9 @@
     "dotenv": "^8.2.0",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/lesleyfon/powerhouse-plant-care.git",
+  "author": "lesley <lesleybanadzem2017@gmail.com>",
+  "license": "MIT"
 }

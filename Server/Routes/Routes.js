@@ -6,7 +6,7 @@ router.post("/api/login", (request, response) => {
 	const { username, password } = request.body;
 
 	if (!username || !password) {
-		let error = new Error({ message: "Please Provide Username and Password", status: 401 });
+		let error = { message: "Please Provide Username and Password", status: 401 };
 
 		return response.status(401).send(error);
 	}

@@ -27,20 +27,22 @@ export class LogInSignUp extends Component {
 	//Handle Submit
 	handleSubmit(e) {
 		e.preventDefault();
-
-		fetch("/login", {
-			method: "POST", // *GET, POST, PUT, DELETE, etc.
+		fetch("http://localhost:5050/api/login", {
+			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				// 'Content-Type': 'application/x-www-form-urlencoded',
 			},
+			body: JSON.stringify({
+				username: this.state.user.username,
+				password: this.state.user.password,
+			}),
 		})
 			.then((response) => {
-				console.log(response);
 				return response.json();
 			})
 			.then((response) => {
 				console.log(response);
+				localStorage.setItem("token", "username");
 			})
 			.catch((error) => {
 				console.log(error);

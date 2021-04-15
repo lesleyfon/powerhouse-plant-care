@@ -1,10 +1,22 @@
 require("dotenv");
 const express = require("express");
-const PORT = process.env.PORT || 5050;
-const app = express();
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
+const app = express();
+const PORT = process.env.PORT || 5050;
+// Routes
 const { router } = require("./Server/Routes/Routes.js");
+
+// Cors
+app.use(
+	cors({
+		origin: "*",
+		methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+		preflightContinue: false,
+	})
+);
+
 // Mongoes Config
 const mongoose = require("mongoose");
 
