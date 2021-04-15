@@ -1,5 +1,6 @@
 import React from "react";
 import PlusSvg from "./../../assets/svgs/plusSign.svg";
+import { Link } from "react-router-dom";
 import "./Header.css";
 class Header extends React.Component {
 	constructor() {
@@ -75,32 +76,32 @@ class Header extends React.Component {
 								<div className="hidden sm:block sm:ml-6">
 									<div className="flex space-x-4">
 										{/* <!-- Current: "bg-gray-900 text-white", Defau plt: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-										<a
-											href="/"
+										<Link
+											to="/"
 											className=" text-th-primary text-base px-3 py-2 rounded-md text-sm font-medium hover:bg-th-light hover:text-th-green"
 											aria-current="page"
 										>
 											About App
-										</a>
+										</Link>
 
-										<a
-											href="/"
+										<Link
+											to="/"
 											// className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 											className=" text-th-primary text-base px-3 py-2 rounded-md text-sm font-medium hover:bg-th-light hover:text-th-green"
 										>
 											Saved Plants
-										</a>
+										</Link>
 
-										<a
-											href="/"
+										<Link
+											to="/"
 											// className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
 											className=" text-th-primary text-base px-3 py-2 rounded-md text-sm font-medium hover:bg-th-light hover:text-th-green"
 										>
 											Plant Of The Day
-										</a>
+										</Link>
 
-										<a
-											href="/"
+										<Link
+											to="/add-plant"
 											className="
 												inline-flex
 												items-center
@@ -130,7 +131,7 @@ class Header extends React.Component {
 												className="max-h-5 w-5 pr-1.5"
 												alt="Visual add sign"
 											/>
-										</a>
+										</Link>
 									</div>
 								</div>
 							</div>
@@ -146,34 +147,34 @@ class Header extends React.Component {
 					<div className="sm:hidden" id="mobile-menu">
 						<div className="px-2 pt-2 pb-3 space-y-1">
 							{/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-							<a
-								href="/"
+							<Link
+								to="/"
 								className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
 								aria-current="page"
 							>
 								About App
-							</a>
+							</Link>
 
-							<a
-								href="/"
+							<Link
+								to="/"
 								className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 							>
 								Saved Plants
-							</a>
+							</Link>
 
-							<a
-								href="/"
+							<Link
+								to="/"
 								className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 							>
 								Plant Of The Day
-							</a>
+							</Link>
 
-							<a
-								href="/"
+							<Link
+								to="/add-plant"
 								className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
 							>
 								Add Plant
-							</a>
+							</Link>
 						</div>
 					</div>
 				</nav>
