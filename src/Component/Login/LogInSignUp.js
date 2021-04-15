@@ -23,9 +23,28 @@ export class LogInSignUp extends Component {
 			},
 		});
 	}
+
+	//Handle Submit
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log(this.state);
+
+		fetch("/login", {
+			method: "POST", // *GET, POST, PUT, DELETE, etc.
+			headers: {
+				"Content-Type": "application/json",
+				// 'Content-Type': 'application/x-www-form-urlencoded',
+			},
+		})
+			.then((response) => {
+				console.log(response);
+				return response.json();
+			})
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 	render() {
 		return (
