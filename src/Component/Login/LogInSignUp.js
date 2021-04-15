@@ -43,12 +43,17 @@ export class LogInSignUp extends Component {
 			.then((response) => {
 				console.log(response);
 				localStorage.setItem("token", "username");
+				this.props.history.push("/");
 			})
 			.catch((error) => {
 				console.log(error);
 			});
 	}
 	render() {
+		// If a user is already logged in, push them to the home page
+		// if (localStorage.getItem("token")) this.props.history.push("/");
+
+		// Submit Form
 		return (
 			<section className="h-screen min-h-full	 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 				<form
@@ -73,7 +78,7 @@ export class LogInSignUp extends Component {
 								placeholder="Username"
 							/>
 						</div>
-						<div className="mb-6 md:w-2/3 lg:w-3/4">
+						<div className="mb-4 w-full  md:w-2/3 lg:w-3/4">
 							<label
 								className="block text-th-primary text-lg font-bold mb-3"
 								htmlFor="password"
