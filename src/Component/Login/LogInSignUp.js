@@ -15,6 +15,11 @@ export class LogInSignUp extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	componentDidMount() {
+		// If a user is already logged in, push them to the home page
+		if (localStorage.getItem("token")) this.props.history.push("/");
+	}
+
 	handleChange(e) {
 		this.setState({
 			user: {
@@ -24,34 +29,33 @@ export class LogInSignUp extends Component {
 		});
 	}
 
-	//Handle Submit
-	handleSubmit(e) {
-		e.preventDefault();
+	// Method to Authenticating user
+	logInUser(userCred) {
 		fetch("http://localhost:5050/api/login", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({
-				username: this.state.user.username,
-				password: this.state.user.password,
-			}),
+			body: JSON.stringify(userCred),
 		})
+			.then((response) => response.json())
 			.then((response) => {
-				return response.json();
+				localStorage.setItem("token", response.password);
+				this.props.history.push("/");
 			})
-			.then((response) => {
-				localStorage.setItem("token", "username");
-				// this.props.history.push("/");
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+			.catch((error) => new Error(error));
+	}
+	//Handle Submit
+	handleSubmit(e) {
+		e.preventDefault();
+
+		// Method to make an API post request to login User
+		this.logInUser({
+			username: this.state.user.username,
+			password: this.state.user.password,
+		});
 	}
 	render() {
-		// If a user is already logged in, push them to the home page
-		// if (localStorage.getItem("token")) this.props.history.push("/");
-
 		// Submit Form
 		return (
 			<section className="h-screen min-h-full	 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
